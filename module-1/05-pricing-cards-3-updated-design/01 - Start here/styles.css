@@ -1,3 +1,15 @@
+:root {
+  --clr-primary-400: #00a1ab;
+  --clr-primary-500: #3741a0;
+
+  --clr-accent-400: #00cdac;
+  --clr-accent-500: #114243;
+
+  --clr-neutral-100: #fff;
+  --clr-neutral-200: #fafafa;
+  --clr-neutral-300: #e5e3e8;
+  --clr-neutral-400: #4e4e4e;
+}
 /* ///////////////
   Reset
   ////////////// */
@@ -15,14 +27,18 @@
 body {
   font-family: "Roboto", sans-serif;
   text-align: center;
+  margin: 0;
+}
+
+section {
+  padding: 6rem 0;
 }
 
 .section-title {
   font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: 900;
-  margin-top: 3em;
-  margin-bottom: 0;
+  margin: 0;
   color: #00a1ab;
 }
 
@@ -32,7 +48,6 @@ body {
 }
 
 .container {
-  padding: 0 2em;
   margin: 0 auto;
   max-width: 1000px;
 }
@@ -62,6 +77,10 @@ body {
   background: #4e4e4e;
 }
 
+.fs-500 + .button {
+  margin-top: 0.75rem;
+}
+
 /* ///////////////
   Plans
   ////////////// */
@@ -73,10 +92,19 @@ body {
 }
 
 .plan {
-  width: 200px;
+  width: 23%;
   padding: 2em;
   border-radius: 1em;
-  margin: 0 0.5em;
+  margin: 0;
+}
+
+.plan:first-child {
+  margin: 1.5rem 0;
+  border-radius: 1em 0 0 1em;
+}
+.plan:last-child {
+  margin: 1.5rem 0;
+  border-radius: 0 1em 1em 0;
 }
 
 .plan--light {
@@ -101,6 +129,11 @@ body {
 .plan--accent .button {
   background: white;
   color: #4e4e4e;
+}
+
+.plan--dark {
+  color: white;
+  background: #4e4e4e;
 }
 
 .plan__title {
@@ -130,13 +163,18 @@ body {
   Teams
   ////////////// */
 
+.team {
+  background: #e5e3e8;
+}
+
 .team-members {
   display: flex;
   flex-wrap: wrap;
+  margin: 2rem auto;
 }
 
 .team-member {
-  background: #abc;
+  background: linear-gradient(180deg, white, lightgrey);
   text-align: left;
   flex: 1 1 45%;
   margin: 1em;
@@ -149,4 +187,35 @@ body {
 .team-member img {
   width: 10rem;
   border-radius: 0.25em;
+}
+
+.team-member--light {
+  padding-right: 0.5em;
+}
+.team-member--light img {
+  order: 2;
+}
+
+.team-member--dark {
+  background: #4e4e4e;
+  color: white;
+}
+
+.info {
+  padding: 0 1.5rem;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.position {
+  margin-top: 0;
+  font-size: 0.75rem;
+}
+
+.position__description {
+  line-height: 2;
 }
