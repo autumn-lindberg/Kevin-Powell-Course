@@ -19,26 +19,113 @@
   --border-radius: 0.75rem;
 }
 
+/* resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* take away automatic margins before/after text */
+.name,
+.roles,
+.bio {
+  margin: 0;
+}
+/* take away margin before/after images */
+img {
+  display: block;
+}
 
+html {
+  font-family: var(--ff-base);
+  color: var(--base-400);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--clr-base-400);
+}
 
+.candidate {
+  padding: 1.25rem;
+  background: var(--clr-dev-300);
+}
+.candidate > img {
+  border-radius: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.name {
+  font-family: var(--ff-accent);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--clr-base-500);
+}
+.roles {
+  display: flex;
+}
+.role {
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem;
+  align-self: center;
+  /* it's fine for the last element to have margin */
+  /* text will never reach that far before wrapping */
+  margin-right: 0.25rem;
+}
+.role--ui {
+  color: var(--clr-ui-400);
+  background: plum;
+}
+.role--dev {
+  color: var(--clr-dev-400);
+  background: aquamarine;
+}
+.role--ux {
+  color: var(--clr-ux-400);
+  background: lightgreen;
+}
 
+.social {
+  list-style: none;
+  display: inline-flex;
+  justify-content: space-evenly;
+  /* change the automatic spacing before/after grid cell content */
+  padding: 0;
+  margin: 0;
+}
+.social img {
+  width: 1.25rem;
+}
+.social img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
 
+.candidate ul {
+  padding: 0;
+}
 
+.candidate ul,
+.candidate a {
+  align-self: center;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.candidate .btn {
+  text-align: right;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background: palevioletred;
+  color: white;
+  border-radius: 0.5rem;
+  margin-left: auto;
+}
+.candidate .btn:hover {
+  color: var(--clr-ui-300);
+  background: lightsalmon;
+  transition: 0.15s ease-in-out;
+  cursor: pointer;
+}
+.candidate .btn:not(:hover) {
+  transition: 0.15s ease-in-out;
+}
 
 /* /////////////////
    Layout related
